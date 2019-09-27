@@ -30,8 +30,8 @@ public class Dice {
             Random rand1 = new Random();
             Random rand2 = new Random();
 
-            int temptal1 = rand1.nextInt((diceMaxSide - 1) + 1) + 1;
-            int temptal2 = rand2.nextInt((diceMaxSide - 1) + 1) + 1;
+            int temptal1 = rand1.nextInt(diceMaxSide )  + 1;
+            int temptal2 = rand2.nextInt(diceMaxSide) + 1;
 
 
             int tal = temptal1 + temptal2;
