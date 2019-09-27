@@ -15,22 +15,23 @@ public class Dice {
     }
     private static void TestOfDice()
     {
+        int totalAmount = 0, diceDouble = 0, maxAmount = 1000, diceMaxSide = 6, diceMinSide = 1;
+        int diceThrowMax = diceMaxSide*2, diceThrowMin= diceMinSide*2;
         Map<Integer, List<Integer>> dice = new HashMap<>();
 
-        for (int i = 2; i <= 12;)
+        for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             dice.put(i, new ArrayList<>());
             i++;
         }
 
-        int totalAmount = 0, diceDouble = 0, maxAmount = 1000;
         while(totalAmount < maxAmount)
         {
             Random rand1 = new Random();
             Random rand2 = new Random();
 
-            int temptal1 = rand1.nextInt((6 - 1) + 1) + 1;
-            int temptal2 = rand2.nextInt((6 - 1) + 1) + 1;
+            int temptal1 = rand1.nextInt((diceMaxSide - 1) + 1) + 1;
+            int temptal2 = rand2.nextInt((diceMaxSide - 1) + 1) + 1;
 
 
             int tal = temptal1 + temptal2;
@@ -41,7 +42,7 @@ public class Dice {
             totalAmount++;
         }
 
-        for (int i = 2; i <= 12;)
+        for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             System.out.println(i + ": " + dice.get(i).size());
             i++;
@@ -50,16 +51,16 @@ public class Dice {
 
         System.out.println("I alt blev der slået: " + diceDouble + " ens");
 
-        int test = 0;
-        for (int i = 2; i <= 12;)
+        int totalProcent = 0;
+        for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             double temp = (dice.get(i).size()*100)/1000;
 
-            test += temp;
+            totalProcent += temp;
             System.out.println(i + ": " + temp + "%");
             i++;
         }
 
-        System.out.println("total: "+test+"%");
+        System.out.println("total: "+totalProcent+"%");
     }
 }
