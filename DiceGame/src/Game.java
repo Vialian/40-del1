@@ -6,6 +6,10 @@ public class Game {
         int point1,point2;
         boolean playerRound;
 
+        while (true)
+        {
+
+        }
 
     }
 }
