@@ -10,7 +10,7 @@ public class Dice {
         TestOfDice();
         int point1, point2;
         boolean playerRound;
-
+        int skalikkebruges = 100;
 
     }
     private static void TestOfDice()
