@@ -15,10 +15,10 @@ public class Dice {
     }
     private static void TestOfDice()
     {
-        NumberFormat nf = NumberFormat.getNumberInstance();
-        nf.setMaximumIntegerDigits(2);
+
         int totalAmount = 0, diceDouble = 0, maxAmount = 1000, diceMaxSide = 6, diceMinSide = 1;
         int diceThrowMax = diceMaxSide*2, diceThrowMin= diceMinSide*2;
+        //test
         Map<Integer, List<Integer>> dice = new HashMap<>();
 
         for (int i = diceThrowMin; i <= diceThrowMax;)
