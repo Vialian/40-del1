@@ -9,7 +9,7 @@ public class Game {
     }
     //setter
     public void setPoint(int x1) {
-        this.point1 = x;
+        this.point1 = x1;
     }
     //getter
     public int getPoint2() {
