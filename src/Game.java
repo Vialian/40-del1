@@ -22,6 +22,7 @@ public class Game {
 
 
     public static void main(String[] args){
+
         while(true){
             boolean won1 = CheckandAdd(AddNCheck.roll(), AddNCheck.roll(), player);
             player = !player;

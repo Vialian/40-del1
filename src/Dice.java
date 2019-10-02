@@ -1,6 +1,5 @@
+import java.text.NumberFormat;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Dice {
 
 
@@ -16,8 +15,12 @@ public class Dice {
     }
     private static void TestOfDice()
     {
+
         int totalAmount = 0, diceDouble = 0, maxAmount = 1000, diceMaxSide = 6, diceMinSide = 1;
         int diceThrowMax = diceMaxSide*2, diceThrowMin= diceMinSide*2;
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMaximumIntegerDigits(2);
+        //test
         Map<Integer, List<Integer>> dice = new HashMap<>();
 
         for (int i = diceThrowMin; i <= diceThrowMax;)
@@ -58,10 +61,10 @@ public class Dice {
         {
             procent = ((double)(dice.get(i).size())/maxAmount)*100;
             totalProcent += procent;
-            System.out.println(i + ": " + procent + "%");
+            System.out.println(i + ": " + nf.format(procent)  + "%");
             i++;
         }
 
-        System.out.println("total: "+totalProcent+"%");
+        System.out.println("total: "+(int)totalProcent+"%");
     }
 }
