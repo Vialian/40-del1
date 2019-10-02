@@ -51,13 +51,13 @@ public class Dice {
 
         System.out.println("I alt blev der slået: " + diceDouble + " ens");
 
-        int totalProcent = 0;
+        double procent = 0;
+        double totalProcent = 0;
         for (int i = diceThrowMin; i <= diceThrowMax;)
         {
-            double temp = (dice.get(i).size()*100)/1000;
-
-            totalProcent += temp;
-            System.out.println(i + ": " + temp + "%");
+            procent = ((double)(dice.get(i).size())/maxAmount)*100;
+            totalProcent += procent;
+            System.out.println(i + ": " + procent + "%");
             i++;
         }
 
