@@ -3,6 +3,7 @@ public class Game {
     private int point1; private int point2;
     private boolean player;
     public static void main(String[] args){
+
         while(true){
             boolean won1 = CheckandAdd(AddNCheck.roll(), AddNCheck.roll(), player);
             player = !player;
