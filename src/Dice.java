@@ -11,6 +11,7 @@ public class Dice {
         int point1, point2;
         boolean playerRound;
         int skalikkebruges = 100;
+        int skalikkebruger_2 = 100;
 
     }
     private static void TestOfDice()
