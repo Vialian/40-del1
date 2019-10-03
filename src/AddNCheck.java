@@ -1,6 +1,7 @@
 public class AddNCheck {
 
-    public int roll() {
+    public static int roll() {
+
         return (int) (Math.random() * 6) + 1;
     }
 
