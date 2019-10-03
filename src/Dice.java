@@ -1,11 +1,9 @@
 import java.text.NumberFormat;
 import java.util.*;
+
 public class Dice {
 
-
     public static void main(String[] args) {
-
-
         TestOfDice();
         int point1, point2;
         boolean playerRound;
@@ -13,9 +11,9 @@ public class Dice {
         int skalikkebruger_2 = 100;
 
     }
+
     private static void TestOfDice()
     {
-
         int totalAmount = 0, diceDouble = 0, maxAmount = 1000, diceMaxSide = 6, diceMinSide = 1;
         int diceThrowMax = diceMaxSide*2, diceThrowMin= diceMinSide*2;
         NumberFormat nf = NumberFormat.getNumberInstance();
