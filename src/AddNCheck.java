@@ -1,60 +1,63 @@
 public class AddNCheck {
+    Game game = new Game();
 
     public static int roll() {
 
         return (int) (Math.random() * 6) + 1;
     }
 
-    private boolean checkRoll(int r1, int r2, boolean player) {
-
+    public boolean checkRoll(int r1, int r2, boolean player) {
+        boolean double6 = false;
         //add point først
 
-        if(player = true){
-            setPl1p() = getPl1p() + r1 + r2;
-        }
-        if(player = false){
-            setPl2p() = getPl2p() + r1 + r2;
-        }
-
-        if (r1 == r2) {
-            if(getPl1point() >= 40){
+        if (player = true) {
+            if (game.getPoint1() >= 40) {
                 return true;
             }
-            if (r1 == 6 && r2 == 6) {
 
-                if (player == true) { //spiller 1 tur
-                    if (p1Double6 == true) {
+            game.setPoint(game.getPoint1() + r1 + r2);
+            if (r1 == r2) {
+                if (r1 == 1) {
+                    game.setPoint(0);
+                    double6 = false;
+                    return false;
+                }
+                if (r1 == 6) {
+                    if (double6 == true) {
+                        double6 = false;
                         return true;
                     } else {
-                        p1Double6 == true;
-                        return checkRoll(roll(),roll(),false);
+                        double6 = true;
+                        return checkRoll(roll(), roll(), true);
                     }
                 }
             }
-            if (player == false) { //spiller 2 tur
-                if(getPl2point == 40){
-                    return true;
-                }
-
-                if (p2Double6 == true) {
-                    return true;
-                } else {
-                    p2Double6 == true;
-
-                }
-
-            }
-            if (r1 == 1) {
-                if(player == true)
-                    setPl1Point(1);
-                return false;
-            }
-        } else { // hvis r1 ikke er lig r2
-            if(player = false)
-               setplayer(false);
-            if(player == false)
-                setplayer(true);
-            return false;
         }
+        if (player = false) { //player 2
+            game.setPoint(game.getPoint2() + r1 + r2);
+            if (game.getPoint2() >= 40) {
+                double6 = false;
+                return true;
+            }
+
+            if (r1 == r2) {
+                if (r1 == 1) {
+                    game.setPoint2(0);
+                    double6 = false;
+                    return false;
+                }
+                if (r1 == 6) {
+                    if (double6 == true) {
+                        double6 = false;
+                        return true;
+                    } else {
+                        double6 = true;
+                        return checkRoll(roll(), roll(), true);
+                    }
+                }
+            }
+        }
+        double6 = false;
+        return false;
     }
 }
