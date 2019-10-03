@@ -1,10 +1,12 @@
 public class Game {
 
-    private int point1 = 0; private int point2 = 0;
+    private int point1; private int point2 ;
 
     //getterasfasf
     public int getPoint1() {
+        System.out.println("get point =" + point1);
         return point1;
+
     }
     //setter
     public void setPoint(int x1) {
@@ -13,6 +15,7 @@ public class Game {
     }
     //getter
     public int getPoint2() {
+        System.out.println("get point =" + point2);
         return point2;
 
     }
