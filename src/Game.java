@@ -2,7 +2,7 @@ public class Game {
 
     private int point1 = 0; private int point2 = 0;
 
-    //getter
+    //getterasfasf
     public int getPoint1() {
         return point1;
     }
