@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Game {
 
     private static int point1; private static int point2;
@@ -72,7 +74,9 @@ public class Game {
         public static int roll() {
 
 
-            return (int) (Math.random() * 6) + 1;
+            Random rand1 = new Random();
+            int diceRoll = rand1.nextInt(6 )  + 1;
+            return diceRoll;
         }
 
         public static boolean checknAdd(int r1, int r2, boolean player) {
@@ -89,11 +93,11 @@ public class Game {
                     if (getPoints(player) >= 40 + r1 + r2) {
 
                         tui.requestRoll(player);
-                        checknAdd(roll(), roll(), player);
                         if (r1 == 1) { //hvis der er blevet slået 1,1 sættes spillerns point til 1
 
                             setPoints(0,player);
                         }
+                        checknAdd(roll(), roll(), player);
                         return true;
                     }
                     if (r1 == 1) { //hvis der er blevet slået 1,1 sættes spillerns point til 1
