@@ -3,14 +3,9 @@ import java.util.*;
 
 public class Dice {
 
-    public static void main(String[] args) {
-        TestOfDice();
-        int point1, point2;
-        boolean playerRound;
-        int skalikkebruges = 100;
-        int skalikkebruger_2 = 100;
-
-    }
+//    public static void main(String[] args) {
+//        TestOfDice();
+//    }
 
     private static void TestOfDice()
     {
@@ -18,9 +13,9 @@ public class Dice {
         int diceThrowMax = diceMaxSide*2, diceThrowMin= diceMinSide*2;
         NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumIntegerDigits(2);
-        //test
         Map<Integer, List<Integer>> dice = new HashMap<>();
 
+        //Adder alle mulige kast til en hashmap
         for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             dice.put(i, new ArrayList<>());
@@ -37,6 +32,7 @@ public class Dice {
 
 
             int tal = temptal1 + temptal2;
+            //adder 1 til det terning kast der er blevet slået
             dice.get(tal).add(1);
             if(temptal1 == temptal2)
                 diceDouble++;
@@ -44,6 +40,7 @@ public class Dice {
             totalAmount++;
         }
 
+        //Skriver antal af hver slag
         for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             System.out.println(i + ": " + dice.get(i).size());
@@ -55,6 +52,7 @@ public class Dice {
 
         double procent = 0;
         double totalProcent = 0;
+        //skriver % af hver slag
         for (int i = diceThrowMin; i <= diceThrowMax;)
         {
             procent = ((double)(dice.get(i).size())/maxAmount)*100;
